@@ -7,13 +7,19 @@
   </head>
   <body>
     <form>
-      <label for="ad-content">Contenido del anuncio</label>
+      <label for="ad-photo">Imagen (url)</label>
+      <input type="url" name="ad-photo" id="ad-photo" required></input>
+      <!-- <input type="file" name="ad-photo" id="ad-photo" required></input> -->
+
+      <label for="ad-title">Título</label>
+      <input type="text" name="ad-title" id="ad-title" required></input>
+
+      <label for="ad-description">Descripcion</label>
       <textarea
-        name="ad-content"
-        id="ad-content"
+        name="ad-description"
+        id="ad-description"
         cols="30"
         rows="10"
-        maxlength="140"
         required
       ></textarea>
 

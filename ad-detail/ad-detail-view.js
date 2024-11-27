@@ -3,8 +3,12 @@ export function buildAdDetail(ad) {
 
   return `
     <div>
-      <span>${createdAt.toLocaleDateString()}</span>
-      <p>${ad.message}</p>
+      <span>usuario: ${ad.user.username} - ${createdAt.toLocaleDateString()}</span>
+      <div>
+          <img src="${ad.img}" width="500"></img>
+      </div>
+      <p>${ad.title}</p>
+      <p>${ad.description}</p>
     </div>
   `
 }

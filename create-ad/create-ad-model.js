@@ -1,10 +1,12 @@
-export async function createAd(message) {
+export async function createAd(img, title, description) {
   const token = localStorage.getItem('jwt');
 
   const response = await fetch("http://localhost:8000/api/ads", {
     method: "POST",
     body: JSON.stringify({
-      message
+      img: img,
+      title: title,
+      description: description
     }),
     headers: {
       "Content-type": "application/json",
