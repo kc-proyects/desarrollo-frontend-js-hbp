@@ -9,6 +9,8 @@ export const buildAd = (ad) => {
           <img src="${ad.img}" width="500"></img>
       </div>
       <p>${ad.title}</p>
+      <p>${ad.price}</p>
+      <p>${ad.type}</p>
       <p>${ad.description}</p>
     </div>
   `;

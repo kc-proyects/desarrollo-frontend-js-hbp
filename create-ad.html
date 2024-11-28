@@ -7,21 +7,29 @@
   </head>
   <body>
     <form>
-      <label for="ad-photo">Imagen (url)</label>
-      <input type="url" name="ad-photo" id="ad-photo" required></input>
-      <!-- <input type="file" name="ad-photo" id="ad-photo" required></input> -->
-
-      <label for="ad-title">Título</label>
-      <input type="text" name="ad-title" id="ad-title" required></input>
-
-      <label for="ad-description">Descripcion</label>
-      <textarea
-        name="ad-description"
-        id="ad-description"
-        cols="30"
-        rows="10"
-        required
-      ></textarea>
+      <div>
+        <label for="ad-photo">Imagen (url)</label>
+        <input type="url" name="ad-photo" id="ad-photo"></input>
+        <!-- <input type="file" name="ad-photo" id="ad-photo" required></input> -->
+      </div>
+      <div>
+        <label for="ad-title">Título</label>
+        <input type="text" name="ad-title" id="ad-title" required></input>
+      </div>
+      <div>
+        <label for="ad-price">Precio</label>
+        <input type="text" name="ad-price" id="ad-price" required></input>
+      </div>
+      <div>
+        <input type="radio" id="ad-type" name="ad-type" value="venta">Venta</input>
+        <input type="radio" id="ad-type" name="ad-type" value="compra">Compra</input>
+      </div>
+      <div>
+        <label for="ad-description">Descripcion</label>
+        <div>
+          <textarea name="ad-description" id="ad-description" cols="30" rows="10" required></textarea>  
+        </div>
+      </div>
 
       <button type="submit">Crear anuncio</button>
     </form>

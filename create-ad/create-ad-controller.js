@@ -7,17 +7,29 @@ export function createAdController(createAdForm) {
     const adImage = createAdForm.querySelector("#ad-photo");
     const adTitle= createAdForm.querySelector("#ad-title");
     const adDescription = createAdForm.querySelector("#ad-description");
+    const adPrice = createAdForm.querySelector("#ad-price");
+    const adType = createAdForm.querySelector("#ad-type");
     
     const adImageValue = adImage.value;
     const adTitleValue = adTitle.value;
     const adDescriptionValue = adDescription.value;
+    const adPriceValue = adPrice.value;
+    const adTypeValue = adType.value;
 
-    handleAdCreation(adImageValue, adTitleValue, adDescriptionValue);
+    const ad = {
+      img: adImageValue, 
+      title: adTitleValue, 
+      description: adDescriptionValue,
+      price: adPriceValue,
+      type: adTypeValue
+    }
+
+    handleAdCreation(ad);
   })
 
-  async function handleAdCreation(adImageValue, adTitleValue, adDescriptionValue) {
+  async function handleAdCreation(ad) {
     try {
-      await createAd(adImageValue, adTitleValue, adDescriptionValue);
+      await createAd(ad);
       window.location.href = "/"
     } catch (error) {
       alert(error.message)
