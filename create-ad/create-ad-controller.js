@@ -31,6 +31,13 @@ export function createAdController(createAdForm) {
     try {
       await createAd(ad);
       window.location.href = "/"
+      const customEvent = new CustomEvent("ad-create-success", {
+        detail: {
+          message: "Anuncio publicado correctamente",
+          type: "succes",
+        }
+      });
+      document.dispatchEvent(customEvent);
     } catch (error) {
       alert(error.message)
     }

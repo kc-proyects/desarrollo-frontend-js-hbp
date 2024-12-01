@@ -12,13 +12,11 @@ export function loginController(loginForm) {
     const userEmail = userEmailElement.value;
     const password = passwordElement.value;
     
-
-    // 2- validar el mail
     const emailRegExp = new RegExp(REGEXP.mail);
     if (!emailRegExp.test(userEmail)) {
-      alert('formato de mail incorrecto')
+      alert('formato de mail incorrecto');
     } else {
-      handleLoginUser(userEmail, password)
+      handleLoginUser(userEmail, password);
     }
 
   })

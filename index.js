@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const navbarContainer = document.querySelector("#navbar");
     navbarController(navbarContainer);
-    
+
     const adsContainer = document.querySelector("#ads-container");
     const notificationsContainer = document.querySelector("#notifications-container");
     const sessionContainer = document.querySelector("#session");
@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
         showNotification(event.detail.message, event.detail.type);
     });
 
-
+    document.addEventListener("ad-create-success", (event) => {
+        showNotification(event.detail.message, event.detail.type);
+    });
 
 });
