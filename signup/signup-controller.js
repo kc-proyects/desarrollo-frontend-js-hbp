@@ -24,11 +24,19 @@ export function signupController(form) {
     }
 
     if (password !== passwordConfirm) {
-      errors.push('las passwords no sin iguales')
+      errors.push('Las contraseñas no coinciden.')
     }
 
-    for (const error of errors) {
-      // mostrar notificaciones
+    const errorsList = document.querySelector("#error-messages");
+    errorsList.innerHTML = "";
+
+    if (errors.length > 0) {
+        errors.forEach(error => {
+            const li = document.createElement("li");
+            li.textContent = error;
+            errorsList.appendChild(li);
+        });
+        
     }
 
     if (errors.length === 0) {

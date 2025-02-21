@@ -23,8 +23,14 @@ export function loginController(loginForm) {
 }
 
 async function handleLoginUser(userEmail, password) {
-  const token = await loginUser(userEmail, password);
+    try {
+        const token = await loginUser(userEmail, password);
 
-  localStorage.setItem("jwt", token);
-  window.location.href = "/"
+        localStorage.setItem("jwt", token);
+        window.location.href = "/";
+        
+    } catch (e) {
+        alert(e.message);
+    }
+  
 }
